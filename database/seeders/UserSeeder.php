@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 /**
- * Class DatabaseSeeder
+ * Class UserSeeder
  * @package Database\Seeders
  */
-class DatabaseSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,9 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            UserSeeder::class,
-            DomainSeeder::class
-        ]);
+        User::factory()
+            ->count(10)
+            ->create();
     }
 }
